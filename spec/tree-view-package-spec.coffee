@@ -2950,8 +2950,8 @@ describe "TreeView", ->
         atom.project.setPaths([projectPath])
         atom.config.set("tree-view.hideVcsIgnoredFiles", true)
 
-      it "does not hide git ignored files", ->
-        expect(Array.from(treeView.element.querySelectorAll('.file')).map((f) -> f.textContent)).toEqual(['.gitignore', 'tree-view.js', 'tree-view.txt'])
+      it "does hide git ignored files", ->
+        expect(Array.from(treeView.element.querySelectorAll('.file')).map((f) -> f.textContent)).toEqual(['.gitignore', 'tree-view.txt'])
 
   describe "the hideIgnoredNames config option", ->
     it "hides ignored files if the option is set, but otherwise shows them", ->
